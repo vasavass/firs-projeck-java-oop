@@ -2,7 +2,7 @@ import java.time.LocalDate;
 
 public class main {
 
-    // === Класс Car ===
+    
     public static class Car {
         protected String make;
         protected String model;
@@ -13,12 +13,12 @@ public class main {
         public static final double MAX_FUEL = 60.0;
         public static final double DEFAULT_CONSUMPTION = 8.0;
 
-        // Конструктор по умолчанию
+        
         public Car() {
 
         }
 
-        // Основной конструктор
+        
         public Car(String make, String model, int year, double mileage, double fuelLevel) {
             this.make = make;
             this.model = model;
@@ -34,12 +34,11 @@ public class main {
             this.fuelLevel = Math.min(Math.max(fuelLevel, 0), MAX_FUEL);
         }
 
-        // Упрощённый конструктор
         public Car(String make, String model) {
             this(make, model, LocalDate.now().getYear(), 0.0, 0.0);
         }
 
-        // Метод drive
+    
         public double drive(double km) {
             if (km <= 0) {
                 System.out.println(" Invalid km");
@@ -57,7 +56,7 @@ public class main {
             }
         }
 
-        // Метод заправки
+        
         public void refuel(double liters) {
             if (liters <= 0) {
                 System.out.println(" Invalid liters");
@@ -84,9 +83,9 @@ public class main {
         }
     }
 
-    // === Класс ElectricCar (наследуется от Car) ===
+    
     public static class ElectricCar extends Car {
-        private int batteryLevel; // процент заряда 0–100
+        private int batteryLevel; 
 
         public ElectricCar(String make, String model, int year, double mileage, int batteryLevel) {
             super(make, model, year, mileage, 0); // вызываем конструктор Car
@@ -125,7 +124,7 @@ public class main {
         }
     }
 
-    // === Главный метод ===
+
     public static void main(String[] args) {
         Car bmw = new Car("BMW", "M5", 2018, 120000, 40);
         ElectricCar tesla = new ElectricCar("Tesla", "Model S", 2023, 20000, 80);
@@ -145,3 +144,4 @@ public class main {
         System.out.println(tesla);
     }
 }
+
